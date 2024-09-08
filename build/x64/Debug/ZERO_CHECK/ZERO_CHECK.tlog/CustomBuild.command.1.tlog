@@ -1,0 +1,10 @@
+^C:\USERS\YUTA\DESKTOP\TETRIS\BUILD\CMAKEFILES\A50246352C12A0E96D427E07519E6521\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/yuta/Desktop/TETRIS -BC:/Users/yuta/Desktop/TETRIS/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/yuta/Desktop/TETRIS/build/TRTRIS.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

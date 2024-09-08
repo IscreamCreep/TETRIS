@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "compile",
+                "link"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "-c",
+                "main.cpp",
+                "-IC:/mingw64/x86_64-w64-mingw32/include",
+                "-IC:/DxLib/12_2_0_x86_64_release_win32_seh_ucrt_rt_v10_rev2",
+                "-I",
+                ".",
+                "-DDX_GCC_COMPILE",
+         ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "link",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.o",
+                "-mwindows",
+                "-LC:/mingw64/x86_64-w64-mingw32/link",
+                "-LC:/DxLib/12_2_0_x86_64_release_win32_seh_ucrt_rt_v10_rev2",
+                "-lmingw32", 
+                "-lgcc",         // 順序を前に
+                "-lmingwex",     // 順序を前に
+                "-lDxLib",
+                "-lDxUseCLib",
+                "-lDxDrawFunc",
+                "-ljpeg",
+                "-lpng",
+                "-lzlib",
+                "-ltiff",
+                "-ltheora_static",
+                "-lvorbis_static",
+                "-lvorbisfile_static",
+                "-logg_static",
+                "-lbulletdynamics",
+                "-lbulletcollision",
+                "-lbulletmath",
+                "-lopusfile",
+                "-lopus",
+                "-lsilk_common",
+                "-lcelt",        
+                "-o",
+                "test.exe"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
