@@ -7,3 +7,6 @@ C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/PACKAGE.dir
 C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/RUN_TESTS.dir
 C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/uftree.dir
+C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/PACKAGE.dir
+C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/RUN_TESTS.dir

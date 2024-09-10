@@ -177,6 +177,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{C5B7500E-EF22-3EDC-A809-71EE65ABD8C4}</Project>
       <Name>TRTRIS</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\yuta\Desktop\TETRIS\build\TETRIS\uftree.vcxproj">
+      <Project>{1CAB8F41-9E85-3C5E-BA9D-FDF03AE3435E}</Project>
+      <Name>uftree</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

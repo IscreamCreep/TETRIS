@@ -1,18 +1,20 @@
-#include "DxLib.h"
+#include <iostream>
 
-// プログラムは WinMain から始まります
-int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow )
-{
-	if( DxLib_Init() == -1 )		// ＤＸライブラリ初期化処理
-	{
-		return -1 ;			// エラーが起きたら直ちに終了
-	}
+#include "uftree.hpp"
 
-	DrawPixel( 320 , 240 , GetColor( 255,255,255 ) ) ;	// 点を打つ
+int main() {
+  UnionFindTree uf(5);  // 0~4の5つの要素について
 
-	WaitKey() ;				// キー入力待ち
+  uf.unite(0, 2);  // 0と2は同じグループ
+  uf.unite(2, 4);  // 2と4は同じグループ
+  uf.unite(1, 3);  // 1と3は同じグループ
 
-	DxLib_End() ;				// ＤＸライブラリ使用の終了処理
+  // 1と2は同じグループ？
+  std::cout << "same(1, 2) : " << (uf.same(1, 2) ? "True" : "False") << std::endl;
+  // 3が所属するグループのメンバーの数は？
+  std::cout << "size(3) : " << uf.size(3) << std::endl;
+  // グループのリストを表示
+  uf.show();
 
-	return 0 ;				// ソフトの終了 
+  return 0;
 }

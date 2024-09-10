@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yuta\Desktop\TETRIS\build\CMakeFiles\0e2ab9cd4ea62e4623780b3067aceeb9\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E91D967C-E337-3DC1-BC45-20A5504C7BBB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
