@@ -24,11 +24,11 @@
 	ProcessorClockFrequency="2496"
 	>
 	<Testing>
-		<StartDateTime>Sep 08 16:34 東京 (標準時)</StartDateTime>
-		<StartTestTime>1725780846</StartTestTime>
+		<StartDateTime>Sep 08 16:46 東京 (標準時)</StartDateTime>
+		<StartTestTime>1725781576</StartTestTime>
 		<TestList/>
-		<EndDateTime>Sep 08 16:34 東京 (標準時)</EndDateTime>
-		<EndTestTime>1725780846</EndTestTime>
+		<EndDateTime>Sep 08 16:46 東京 (標準時)</EndDateTime>
+		<EndTestTime>1725781576</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
