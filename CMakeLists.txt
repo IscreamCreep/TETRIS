@@ -12,7 +12,7 @@ include_directories(${PROJECT_SOURCE_DIR}/dxlib)
 link_directories(${PROJECT_SOURCE_DIR}/dxlib)
 
 # 実行ファイルを生成
-add_executable(Tetris main.cpp src/Game.cpp)
+add_executable(Tetris main.cpp src/game.cpp src/tetromino.cpp)
 
 # DXlibをリンク
 target_link_libraries(Tetris 

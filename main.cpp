@@ -1,22 +1,37 @@
 #include <DxLib.h>
-#include "Game.hpp"
+#include "game.hpp"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+
+    int timeLimit = 10000;
+	int timeToMove = 1000;
+
     // DXライブラリ初期化処理
     if (DxLib_Init() == -1) {
         return -1;
     }
-
+    
     Game game;
-    game.run();
 
-    DrawFormatString(320, 240, GetColor(255, 255, 255), "Score: %d", game.getScore());
+    game.initialiseGame();
 
-    // キー入力待ち
-    WaitKey();
+    // 時間計測用変数
+	int startTime = GetNowCount();
+	int timerToMove = GetNowCount();
 
-    // DXライブラリ終了処理
+    // ゲームループ
+    while (!ProcessMessage() && !CheckHitKey(KEY_INPUT_ESCAPE)) 
+    {
+        if (GetNowCount() - timerToMove > timeToMove) 
+        {
+            game.updateGame();
+            timerToMove = GetNowCount();
+        }
+        game.drawBoard();
+        ScreenFlip();
+    }
+    
+    // 終了処理
     DxLib_End();
-
     return 0;
 }
