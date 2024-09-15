@@ -1,20 +1,22 @@
-#include <iostream>
+#include <DxLib.h>
+#include "Game.hpp"
 
-#include "uftree.hpp"
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    // DXライブラリ初期化処理
+    if (DxLib_Init() == -1) {
+        return -1;
+    }
 
-int main() {
-  UnionFindTree uf(5);  // 0~4の5つの要素について
+    Game game;
+    game.run();
 
-  uf.unite(0, 2);  // 0と2は同じグループ
-  uf.unite(2, 4);  // 2と4は同じグループ
-  uf.unite(1, 3);  // 1と3は同じグループ
+    DrawFormatString(320, 240, GetColor(255, 255, 255), "Score: %d", game.getScore());
 
-  // 1と2は同じグループ？
-  std::cout << "same(1, 2) : " << (uf.same(1, 2) ? "True" : "False") << std::endl;
-  // 3が所属するグループのメンバーの数は？
-  std::cout << "size(3) : " << uf.size(3) << std::endl;
-  // グループのリストを表示
-  uf.show();
+    // キー入力待ち
+    WaitKey();
 
-  return 0;
+    // DXライブラリ終了処理
+    DxLib_End();
+
+    return 0;
 }

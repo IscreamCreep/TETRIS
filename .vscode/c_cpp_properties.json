@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}",
+                "${workspaceFolder}/**",
                 "C:/mingw64/include",
                 "C:/DxLib/12_2_0_x86_64_release_win32_seh_ucrt_rt_v10_rev2",
                 "C:/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++"

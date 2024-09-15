@@ -1,12 +1,3 @@
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/TRTRIS.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/Experimental.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/Nightly.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/Continuous.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/NightlyMemoryCheck.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/PACKAGE.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/RUN_TESTS.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/uftree.dir
-C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/PACKAGE.dir
-C:/Users/yuta/Desktop/TETRIS/build/TETRIS/CMakeFiles/RUN_TESTS.dir
+C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/Tetris.dir
+C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/edit_cache.dir
+C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/rebuild_cache.dir

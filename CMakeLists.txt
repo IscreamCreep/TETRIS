@@ -1,17 +1,36 @@
-cmake_minimum_required(VERSION 3.5.0)
-project(TRTRIS VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.10)
+project(Tetris)
 
-add_subdirectory(./TETRIS)
-add_executable(TRTRIS main.cpp)
-target_link_libraries(TRTRIS PRIVATE uftree)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-include_directories(C:/DxLib/12_2_0_x86_64_release_win32_seh_ucrt_rt_v10_rev2)
-link_directories(C:/DxLib/12_2_0_x86_64_release_win32_seh_ucrt_rt_v10_rev2)
+# include と dxlib ディレクトリをインクルードパスに追加
+include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/dxlib)
 
-include(CTest)
-enable_testing()
+# dxlibフォルダ内のライブラリパスを設定
+link_directories(${PROJECT_SOURCE_DIR}/dxlib)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+# 実行ファイルを生成
+add_executable(Tetris main.cpp src/Game.cpp)
 
+# DXlibをリンク
+target_link_libraries(Tetris 
+                        DxLib
+                        DxUseCLib
+                        DxDrawFunc
+                        jpeg
+                        png
+                        zlib
+                        tiff
+                        theora_static
+                        vorbis_static
+                        vorbisfile_static
+                        ogg_static
+                        bulletdynamics
+                        bulletcollision
+                        bulletmath
+                        opusfile
+                        opus
+                        silk_common
+                        celt)
