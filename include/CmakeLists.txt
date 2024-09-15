@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.14)
+
+# ヘッダーファイルを集める（必要な場合）
+file(GLOB_RECURSE HEADERS "*.hpp")
+
+# ヘッダーファイルをプロジェクトに追加（IDEでの表示用）
+add_custom_target(tetris_headers SOURCES ${HEADERS})
