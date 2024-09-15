@@ -1,3 +1,0 @@
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/Tetris.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/edit_cache.dir
-C:/Users/yuta/Desktop/TETRIS/build/CMakeFiles/rebuild_cache.dir
