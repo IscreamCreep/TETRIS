@@ -38,17 +38,29 @@ void Game::drawBoard()
 	// グリッドの描画
 	for (int y = 0; y < BOARD_HEIGHT; ++y) {
         for (int x = 0; x < BOARD_WIDTH; ++x) {
-            if (board[y][x] != 0) {
+            
                 DrawBox(BLOCK_SIZE * (x + 1), BLOCK_SIZE * (y + 1),
                         BLOCK_SIZE * (x + 2), BLOCK_SIZE * (y + 2),
-                        GetTetrominoColour(static_cast<TetrominoType>(board[y][x])), TRUE);
-            }
+                        //GetTetrominoColour(static_cast<TetrominoType>(board[y][x])), TRUE
+                        GetColor(128, 128, 128), FALSE
+                        );
+           
         }
     }
     if (currentTetromino) 
     {
         currentTetromino->draw();
     }
+
+    // Print the number in board vector on blocks for debugging
+    for (int y = 0; y < BOARD_HEIGHT; ++y) {
+        for (int x = 0; x < BOARD_WIDTH; ++x) {
+            if (board[y][x] != 0) {
+                DrawFormatString(BLOCK_SIZE * (x + 1), BLOCK_SIZE * (y + 1), GetColor(255, 255, 255), "%d", board[y][x]);
+            }
+        }
+    }
+
 }
 
 void Game::spawnTetromino() {
@@ -56,6 +68,17 @@ void Game::spawnTetromino() {
     currentTetromino = new Tetromino(type);
     if (currentTetromino->checkCollision(board)) {
         gameOver = true;
+    }
+}
+
+void Game::rotateTetromino() {
+    if (currentTetromino) {
+        currentTetromino->rotate();
+        // if (currentTetromino->checkCollision(board)) {
+        //     currentTetromino->rotate();
+        //     currentTetromino->rotate();
+        //     currentTetromino->rotate();
+        // }
     }
 }
 
@@ -112,9 +135,38 @@ void Game::updateGame()
 {
     if (gameOver) return;
 
-    if (currentTetromino) {
+    if (currentTetromino) 
+    {
+        currentTetromino->rotate();
+
+        if (CheckHitKey(KEY_LEFT) == 1) 
+        {
+            currentTetromino->move(-1, 0);
+            if (currentTetromino->checkCollision(board)) 
+            {
+                currentTetromino->move(1, 0);
+            }
+        }
+        else if (CheckHitKey(KEY_RIGHT) == 1) 
+        {
+            currentTetromino->move(1, 0);
+            if (currentTetromino->checkCollision(board)) 
+            {
+                currentTetromino->move(-1, 0);
+            }
+        }
+        else if (CheckHitKey(KEY_DOWN) == 1) 
+        {
+            currentTetromino->move(0, 1);
+            if (currentTetromino->checkCollision(board)) 
+            {
+                currentTetromino->move(0, -1);
+            }
+        }
         currentTetromino->move(0, 1);
-        if (currentTetromino->checkCollision(board)) {
+
+        if (currentTetromino->checkCollision(board)) 
+        {
             currentTetromino->move(0, -1);
             lockTetromino();
             clearLines();

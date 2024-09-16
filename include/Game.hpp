@@ -13,6 +13,7 @@ public:
     void updateGame();
     void drawBoard();
     void spawnTetromino();
+    void rotateTetromino();
     void lockTetromino();
     void clearLines();
     bool isGameOver() const;

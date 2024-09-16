@@ -38,10 +38,11 @@ constexpr unsigned int COLOUR_J = 0x0000FF;         // J字ブロックの色（
 constexpr unsigned int COLOUR_L = 0xFF7F00;         // L字ブロックの色（オレンジ）
 
 // キー設定
-constexpr int KEY_LEFT = KEY_INPUT_LEFT;
-constexpr int KEY_RIGHT = KEY_INPUT_RIGHT;
-constexpr int KEY_DOWN = KEY_INPUT_DOWN;
-constexpr int KEY_ROTATE = KEY_INPUT_UP;
+constexpr int KEY_LEFT = KEY_INPUT_A;
+constexpr int KEY_RIGHT = KEY_INPUT_D;
+constexpr int KEY_DOWN = KEY_INPUT_S;
+constexpr int KEY_ROTATE_R = KEY_INPUT_E;
+constexpr int KEY_ROTATE_L = KEY_INPUT_Q;
 constexpr int KEY_HARD_DROP = KEY_INPUT_SPACE;
 constexpr int KEY_PAUSE = KEY_INPUT_P;
 

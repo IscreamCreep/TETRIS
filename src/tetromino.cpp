@@ -48,6 +48,30 @@ Tetromino::Tetromino(TetrominoType type) : type(type), x(BOARD_WIDTH / 2 - 2), y
 
 void Tetromino::rotate() {
     // 回転のロジックを実装
+	if (CheckHitKey(KEY_ROTATE_R))
+	{
+		std::vector<std::vector<int>> newShape(shape[0].size(), std::vector<int>(shape.size(), 0));
+		for (int i = 0; i < shape.size(); ++i)
+		{
+			for (int j = 0; j < shape[i].size(); ++j)
+			{
+				newShape[j][shape.size() - 1 - i] = shape[i][j];
+			}
+		}
+		shape = newShape;
+	}
+	else if (CheckHitKey(KEY_ROTATE_L == 1))
+	{
+		std::vector<std::vector<int>> newShape(shape[0].size(), std::vector<int>(shape.size(), 0));
+		for (int i = 0; i < shape.size(); ++i)
+		{
+			for (int j = 0; j < shape[i].size(); ++j)
+			{
+				newShape[shape[i].size() - 1 - j][i] = shape[i][j];
+			}
+		}
+		shape = newShape;
+	}
 }
 
 void Tetromino::move(int dx, int dy) {
